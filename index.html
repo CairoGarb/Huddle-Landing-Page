@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Huddle landing page with single introductory section</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap');
+
+    :root {
+      /* colors */
+      --Violet: hsl(257, 40%, 49%);
+      --Soft-Magenta: hsl(300, 69%, 71%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      background: url(images/bg-desktop.svg);
+      background-color: var(--Violet);
+      background-repeat: no-repeat;
+      background-size:contain;
+    }
+
+    .header-logo {
+      width: 200px;
+      padding: 30px 0 0 50px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      padding: 90px 50px 0 50px;
+    }
+
+/* Main Content */
+    .main-img {
+      width: auto;
+    }
+
+    .main-text {
+      width: 50%;
+      padding: 40px;
+    }
+
+    .main-text h1 {
+      color: white;
+      font-size: 38px;
+      padding-bottom: 20px;
+      max-width: 75%;
+    }
+
+    .main-text p {
+      color: white;
+      padding-bottom: 20px;
+      word-spacing: 2px;
+      max-width: auto;
+      }
+/* Main Content */
+
+/* Button */
+    .main-button button {
+      background-color: white;
+      padding: 15px;
+      width: 30%;
+      border: none;
+      border-radius: 30px;
+      color: var(--Violet);
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.579);
+    }
+
+    button:hover {
+      background-color: var(--Soft-Magenta);
+      cursor: pointer;
+      color: white;
+    }
+/* Button */
+
+
+/* Footer */
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+    .attribution { font-size: 11px; text-align: center; color: var(--Soft-Magenta);}
+    .attribution a { color: hsl(0, 0%, 97%); }
+
+    .sm-logos {
+      display: flex;
+      justify-content: flex-end;
+      gap: 15px;
+      padding-right: 5%;
+    }
+
+    .sm-logos-active {
+      display: flex;
+      justify-content: flex-end;
+      gap: 15px;
+      padding-right: 5%;
+    }
+
+    .face-logo {
+      border-radius: 50%;
+      padding: 10px;
+      border: 2px solid white;
+      width: 15px;
+      height: 15px;
+      cursor: pointer;
+    }
+
+    .face-logo-active {
+      width: 15px;
+      height: 15px;
+      border: 2px solid var(--Soft-Magenta);
+      padding: 10px;
+      border-radius: 50%;
+      position: absolute;
+      margin-top: -38.2px;
+      margin-right: 106.5px;
+      z-index: -1;
+    }
+
+    .face-logo:hover {
+      cursor: pointer;
+      z-index: -1;
+    }
+
+    .face-logo-active:hover {
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    .tt-logo {
+      border-radius: 50%;
+      padding: 10px;
+      border: 2px solid white;
+      width: 15px;
+      height: 15px;
+      cursor: pointer;
+    }
+
+    .tt-logo-active {
+      width: 15px;
+      height: 15px;
+      border: 2px solid var(--Soft-Magenta);
+      padding: 10px;
+      border-radius: 50%;
+      position: absolute;
+      margin-top: -38.2px;
+      margin-right: 53.2px;
+      z-index: -1;
+    }
+    .tt-logo:hover {
+      cursor: pointer;
+      z-index: -1;
+    }
+
+    .tt-logo-active:hover {
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    .insta-logo {
+      border-radius: 50%;
+      padding: 10px;
+      border: 2px solid white;
+      width: 15px;
+      height: 15px;
+      cursor: pointer;
+    }
+
+    .insta-logo-active {
+      width: 15px;
+      height: 15px;
+      border: 2px solid var(--Soft-Magenta);
+      padding: 10px;
+      border-radius: 50%;
+      position: absolute;
+      margin-top: -38.2px;
+      margin-right: 0;
+      z-index: -1;
+    }
+
+    .insta-logo:hover {
+      cursor: pointer;
+      z-index: -1;
+    }
+
+    .insta-logo-active:hover {
+      cursor: pointer;
+      z-index: 1;
+    }
+    
+/* Footer */
+
+/* Responsiveness */
+
+/* Tablets */
+@media screen and (max-width: 890px) {
+  
+  body:not(header .header-logo) {
+    max-width: 890px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    background: url(images/bg-mobile.svg);
+    background-color: var(--Violet);
+    background-repeat: no-repeat;
+    background-size:contain;
+  }
+
+  header {
+    margin-left: -50%;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 50px 0 50px;
+  }
+
+  .main-img {
+    width: 650px;
+  }
+
+  .main-text {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+  }
+
+  .main-text h1 {
+    font-size: 42px;
+    margin: 0 auto;
+    max-width: 500px;
+    padding-bottom: 10px;
+  }
+
+  .main-text p {
+    width: 500px;
+    height: auto;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .main-button button {
+    width: 300px;
+    font-size: 16px;
+    padding: 10px;
+    text-align: center;
+    margin: 0 auto;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.579);
+    margin-bottom: 10px;
+  }
+
+  footer {
+    display:flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sm-logos {
+    padding-bottom: 0;
+  }
+
+  .sm-logos-active {
+    padding-bottom: 10px;
+  }
+
+
+}
+/* Tablets */
+
+/* Mobile */
+@media screen and (max-width: 431px) {
+  
+  body {
+    max-width: 431px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    background: url(images/bg-mobile.svg);
+    background-color: var(--Violet);
+    background-repeat: no-repeat;
+    background-size:contain;
+  }
+
+  header {
+    margin-left: -50%;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 50px 0 50px;
+  }
+
+  .main-img {
+    width: 350px;
+  }
+
+  .main-text {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+  }
+
+  .main-text h1 {
+    font-size: 24px;
+    margin: 0 auto;
+    max-width: 350px;
+    padding-bottom: 10px;
+  }
+
+  .main-text p {
+    width: 300px;
+    height: auto;
+    margin: 0 auto;
+    font-size: 15px;
+    line-height: 25px;
+  }
+
+  .main-button button {
+    width: 200px;
+    font-size: 15px;
+    padding: 10px;
+    text-align: center;
+    margin: 0 auto;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.579);
+    margin-bottom: 10px;
+  }
+
+  footer {
+    display:flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sm-logos {
+    padding-bottom: 0;
+  }
+
+  .sm-logos-active {
+    padding-bottom: 10px;
+  }
+
+
+}
+/* Mobile */
+
+</style>
+</head>
+<body>
+
+<!-- Header -->
+  <header>
+    <figure class="header-logo">
+      <img src="images/logo.svg" alt="logo">
+    </figure>
+  </header>
+
+<!-- Main Content -->
+  <main>
+    <div class="container">
+      <figure class="main-img">
+        <img src="images/illustration-mockups.svg" alt="main image">
+      </figure>
+      <div class="main-text">
+        <h1>Build The Community Your Fans Will Love</h1>
+        <p>Huddle re-imagines the way we build communities. You have a voice, but so does your audience. Create connections with your users as you engage in genuine discussion.</p>
+        <div class="main-button">
+          <button>Register</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+<!-- Footer -->
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://www.frontendmentor.io/profile/Cairowisk">Cairo Garbelotto</a>.
+    </div>
+    <div class="sm-area">
+      <figure class="sm-logos">
+        <img class="face-logo" src="images/facebook-logo.png" alt="facebook icon">
+        <img class="tt-logo" src="images/twitter-logo.png" alt="twitter icon">
+        <img class="insta-logo" src="images/insta-logo.png" alt="instagram icon">
+      </figure>
+      <figure class="sm-logos-active">
+        <img class="face-logo-active" src="images/facebook-active.png" alt="facebook icon">
+        <img class="tt-logo-active" src="images/twitter-active.png" alt="twitter icon">
+        <img class="insta-logo-active" src="images/insta-active.png" alt="instagram icon">
+      </figure>
+    </div>
+  </footer>
+</body>
+</html>
